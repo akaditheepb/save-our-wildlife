@@ -1,0 +1,147 @@
+/* =============================================
+   style.css – Save Our Wildlife
+   Responsive + Accessible CSS
+   ============================================= */
+
+/* --- Reset & Base -------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green-dark:   #1b4332;
+  --green-mid:    #2d6a4f;
+  --green-light:  #52b788;
+  --accent:       #f4a261;
+  --text-light:   #f1f5e9;
+  --text-dark:    #1a1a1a;
+  --bg:           #f8fdf4;
+  --radius:       0.75rem;
+  --shadow:       0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* High-contrast focus ring for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Header -------------------------------------- */
+header {
+  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  color: var(--text-light);
+  text-align: center;
+  padding: clamp(1.5rem, 5vw, 3rem) 1rem;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* --- Main --------------------------------------- */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(1.5rem, 4vw, 3rem) 1rem;
+}
+
+/* --- Video Section ------------------------------ */
+.video-section {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 860px;
+  width: 100%;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 4px);
+  background: #000;
+  /* Accessible: controls are always shown via HTML attribute */
+}
+
+/* --- Description -------------------------------- */
+.description {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: #3a3a3a;
+  border-left: 4px solid var(--green-light);
+  padding-left: 1rem;
+}
+
+/* --- Toggle Button ------------------------------ */
+.toggle-btn {
+  align-self: flex-start;
+  background-color: var(--green-mid);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+  /* Minimum touch target size (WCAG 2.5.5) */
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.toggle-btn:hover {
+  background-color: var(--green-dark);
+}
+
+.toggle-btn:active {
+  transform: scale(0.97);
+}
+
+/* When video is playing, style the button differently */
+.toggle-btn.playing {
+  background-color: var(--accent);
+  color: var(--text-dark);
+}
+
+/* --- Footer ------------------------------------- */
+footer {
+  background-color: var(--green-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+/* --- Responsive Breakpoints -------------------- */
+@media (max-width: 600px) {
+  .toggle-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* --- Reduced Motion (Accessibility) ------------ */
+@media (prefers-reduced-motion: reduce) {
+  .toggle-btn {
+    transition: none;
+  }
+}

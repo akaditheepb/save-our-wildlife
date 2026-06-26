@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Save Our Wildlife – a conservation awareness page promoting wildlife protection." />
+  <title>Save Our Wildlife</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Save Our Wildlife</h1>
+  </header>
+
+  <main>
+    <section class="video-section" aria-label="Wildlife promotional video">
+      <video
+        id="wildlifeVideo"
+        controls
+        preload="metadata"
+        aria-label="Wildlife conservation promotional video"
+      >
+        <source src="wildlife.mp4" type="video/mp4" />
+        <p>Your browser does not support HTML5 video.
+           <a href="wildlife.mp4">Download the video</a> instead.</p>
+      </video>
+
+      <p class="description">
+        Every species matters. Our planet's biodiversity is under threat from
+        habitat loss, poaching, and climate change. Join us in protecting the
+        magnificent creatures that share our world — before it's too late.
+      </p>
+
+      <button
+        id="toggleBtn"
+        class="toggle-btn"
+        aria-pressed="false"
+        aria-controls="wildlifeVideo"
+      >
+        ▶ Play Video
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Save Our Wildlife Conservation Organization</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
